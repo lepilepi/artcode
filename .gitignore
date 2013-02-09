@@ -1,3 +1,4 @@
 node_modules
 /index.html
 /why.html
+.DS_Store
