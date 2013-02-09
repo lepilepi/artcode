@@ -1,0 +1,80 @@
+doctype 5
+html
+  head
+  meta(charset="utf-8")
+  title _why artcode
+  style
+    html, body{border: none; margin:0;}
+    *{color:#839496; font-family: sans-serif;}
+    .tb{width:100%}
+    .tb td{padding:7px;margin:0;border:0}
+    .tb td.left{text-align: right; width:50%; padding-right:16px}
+    .tb td.right{text-align: left; width:50%; padding-left: 16px}
+    .tb td.left.alt{text-align: left; width:50%; padding-left:16px}
+    .tb td.right.alt{text-align: right; width:50%; padding-right: 16px}
+    .tb td.center{text-align: center;}
+    .thought.alt {display:none}
+    .bg{background:#002b36;}
+    .bg.alt{background: #fdf6e3;}
+  body
+
+    .bg(style='width: 50%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1;')
+    .bg.alt(style='width: 50%; height: 100%; position: fixed; right: 0; top: 0; z-index: -1;')
+    .container
+      h1 _why?
+      table.tb(width='100%')
+        tr.lr(style='font-size: 3.3em;')
+          td.left(style='letter-spacing: 2px;')
+            | programming
+          td.right(style='letter-spacing: -4px;')
+            | artistic expression
+        tr
+          td.center(colspan='2')
+            | is a
+            b creative process
+            | where the
+        tr.lr(style='font-size: 7em;')
+          td.left
+            b code
+            | r
+          td.right
+            b art
+            | ist
+        tr
+          td.center(colspan='2')
+            | expresses
+        tr.thought.lr(style='font-size: 4em; height: 120px;')
+          td.left(style='letter-spacing: -2px;')
+            | computation
+          td.right(style='letter-spacing: 2px;')
+            | feelings
+        tr.thought.alt(style='font-size: 5em; height: 120px; letter-spacing: 2px;')
+          td.center(colspan='2')
+            b thought
+        tr
+          td.center(colspan='2')
+            | to be
+            b interpreted
+            | by
+        tr.lr(style='font-size: 4.5em;')
+          td.left
+            | machines
+          td.right(style='letter-spacing: 4px;')
+            | people
+
+    a(href="https://github.com/brainrape/artcode")
+      img(style="position: fixed; top: 0; right: 0; border: 0; z-index:10000", src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png", alt="Fork me on GitHub")
+
+    script(src="lib/lodash.min.js")
+    script(src="lib/coffee-script.js")
+    script(src="lib/jquery-1.9.0.min.js")
+    :coffeescript
+      ($ window).on 'keypress', (e) ->
+        switch e.charCode
+          when 32 then ($ '.bg').toggleClass 'alt'
+          when 99 then ($ '.thought').toggleClass 'alt'
+          when 118
+            ($ '.left,.right').toggleClass 'alt'
+            ($ '.lr').each (i, it) ->
+              ($ it).append ($ it).children()[0]
+

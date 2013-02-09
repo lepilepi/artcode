@@ -1,0 +1,16 @@
+{
+  "name": "artcode",
+  "version": "0.0.1",
+  "description": "Learn to code. Make art happen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brainrape/artcode.git"
+  },
+  "author": "brainrape",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
